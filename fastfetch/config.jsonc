@@ -3,102 +3,121 @@
   "modules": [
     {
       "type": "title",
-      "format": "{#1}╭────── User : {#}{user-name-colored}@{host-name-colored}"
+      "format": "{#}╭────── User : {user-name-colored}@{host-name-colored}"
     },
     {
       "type": "custom",
-      "format": "{#1}│ {#}System Information"
+      "format": "{#}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#}│ System Information"
     },
     {
       "type": "os",
-      "key": "{#separator}│  {#keys}󰍹 OS"
+      "key": "{#}│  {#blue}󰍹 OS"
     },
     {
       "type": "kernel",
-      "key": "{#separator}│  {#keys}󰒋 Kernel"
+      "key": "{#}│  {#blue}󰒋 Kernel"
     },
     {
       "type": "uptime",
-      "key": "{#separator}│  {#keys}󰅐 Uptime"
+      "key": "{#}│  {#blue}󰅐 Uptime"
     },
     {
-      "type": "command",
-      "key": "{#separator}│  {#keys}󰅐 OS Age",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "condition": {
+        "!system": "macOS"
+      },
+      "type": "disk",
+      "key": "{#}│  {#blue}󰅐 OS Age",
+      "folders": "/",
+      "format": "{create-time:10} ({days} days)"
+    },
+    {
+      "condition": {
+        "system": "macOS"
+      },
+      "type": "disk",
+      "key": "{#}│  {#blue}󰅐 OS Age",
+      "folders": "/System/Volumes/VM",
+      "format": "{create-time:10} ({days} days)"
     },
     {
       "type": "packages",
-      "key": "{#separator}│  {#keys}󰏓 Packages"
+      "key": "{#}│  {#blue}󰏓 Packages"
     },
     {
-      "type": "bios",
-      "key": "{#separator}│  {#keys}󰏓 BIOS"
+      "type": "command",
+      "key": "{#}│  {#blue}󰞷 fastfetch",
+      "text": "fastfetch --version-raw",
+      "format": ""
     },
     {
       "type": "wifi",
-      "key": "{#separator}│  {#keys}󰖩 Wi-Fi"
+      "key": "{#}│  {#blue}󰖩 Wi-Fi"
     },
     {
       "type": "custom",
-      "format": "{#1}│"
+      "format": "{#}│"
     },
     {
       "type": "custom",
-      "format": "{#1}│ {#}Desktop Environment"
+      "format": "{#}│ Desktop Environment"
     },
     {
       "type": "de",
-      "key": "{#separator}│  {#keys}󰧨 DE"
+      "key": "{#}│  {#green}󰧨 DE"
     },
     {
       "type": "wm",
-      "key": "{#separator}│  {#keys}󱂬 WM"
+      "key": "{#}│  {#green}󱂬 WM"
     },
     {
       "type": "wmtheme",
-      "key": "{#separator}│  {#keys}󰉼 Theme"
+      "key": "{#}│  {#green}󰉼 Theme"
     },
     {
       "type": "shell",
-      "key": "{#separator}│  {#keys}󰞷 Shell"
+      "key": "{#}│  {#green}󰞷 Shell"
     },
     {
       "type": "custom",
-      "format": "{#1}│"
+      "format": "{#}│"
     },
     {
       "type": "custom",
-      "format": "{#1}│ {#}Hardware Information"
+      "format": "{#}│ Hardware Information"
     },
     {
       "type": "cpu",
-      "key": "{#separator}│  {#keys}󰻠 CPU"
+      "key": "{#}│ {#red} 󰻠 CPU"
     },
     {
       "type": "gpu",
-      "key": "{#separator}│  {#keys}󰢮 GPU"
+      "key": "{#}│ {#red} 󰢮 GPU"
     },
     {
       "type": "gpu",
-      "key": "{#separator}│  {#keys}󰍹 GPU Driver",
+      "key": "{#}│ {#red} 󰍹 GPU Driver",
       "format": "{driver}"
     },
     {
       "type": "memory",
-      "key": "{#separator}│  {#keys}󰍛 Memory"
+      "key": "{#}│ {#red} 󰍛 Memory"
     },
     {
       "type": "disk",
-      "key": "{#separator}│  {#keys}󰋊 Disk (/)",
+      "key": "{#}│ {#red} 󰋊 Disk (/)",
       "folders": "/"
     },
     {
       "type": "custom",
-      "format": "{#1}│"
+      "format": "{#}│"
     },
     {
       "type": "custom",
-      "format": "{#1}╰───────────────────────────────╯"
+      "format": "{#}╰──────────────────────────────────────"
     }
   ]
 }
