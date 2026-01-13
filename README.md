@@ -9,3 +9,4 @@ git clone git@github.com:LehaMotovilov/fastfetch.git && cd fastfetch && cp -r fa
 ## how it looks
 
 ![macOS](screenshots/macos.png "macOS")
+![linux](screenshots/linux.png "linux")
