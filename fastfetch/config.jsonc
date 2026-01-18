@@ -78,6 +78,10 @@
       "key": "{#}│  {#green}󰉼 Theme"
     },
     {
+      "type": "terminal",
+      "key": "{#}│  {#green}󰞷 Terminal"
+    },
+    {
       "type": "shell",
       "key": "{#}│  {#green}󰞷 Shell"
     },
@@ -110,6 +114,10 @@
       "type": "disk",
       "key": "{#}│ {#red} 󰋊 Disk (/)",
       "folders": "/"
+    },
+    {
+      "type": "display",
+      "key": "{#}│ {#red} 󰍹 Display (/)"
     },
     {
       "type": "custom",
